@@ -15,10 +15,10 @@ public class HomeWorkApp {
         System.out.println("Apple");
     }
     public static void checkSumSign(){
-        int a = -14;
-        int b = 2;
-
-        if ((a + b) >= 0){
+        int a = -14, b = 2;
+        int sum = a + b;
+    //    String s = sum >= 0 ? "Сумма положительная" : "Сумма отрицательная"; тернарный оператор
+        if (sum >= 0){
             System.out.println("Сумма положительная");
         }else {
             System.out.println("Сумма отрицательная");
