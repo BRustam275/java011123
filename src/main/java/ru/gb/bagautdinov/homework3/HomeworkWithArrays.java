@@ -7,13 +7,14 @@ import static java.util.Arrays.sort;
 
 public class HomeworkWithArrays {
     public static void main(String[] args) {
-        replacingNumbers(new int[10]);
-        fillTheArray (new int [100]);
-        multiplyByTwo(new  int[10]);
-        System.out.println(Arrays.deepToString(diagonalReplacement(5)));
-        System.out.println(Arrays.toString(receivesAndTransmits(10, 5)));
-        System.out.println(min(new int[]{1, 9, 14, 5, 7, 96}));
-        boolean b = checkBalance(new int[]{1, 5, 4, 8, 1, 7, 3});
+        //  replacingNumbers(new int[10]);
+        //  fillTheArray (new int [100]);
+        //  multiplyByTwo(new  int[10]);
+        //  System.out.println(Arrays.deepToString(diagonalReplacement(5)));
+        //  System.out.println(Arrays.toString(receivesAndTransmits(10, 5)));
+        //  System.out.println(min(new int[]{1, 9, 14, 5, 7, 96}));
+        //  boolean b = checkBalance(new int[]{1, 5, 4, 8, 1, 7, 3});
+        shiftArray(new int[12], 1);
 
     }
 
@@ -39,7 +40,7 @@ public class HomeworkWithArrays {
 
     //2. Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить его
 //значениями 1 2 3 4 5 6 7 8 … 100;
-    public static void fillTheArray (int [] a){
+    public static void fillTheArray(int[] a) {
         for (int i = 0; i < a.length; i++) {
             a[i] = i + 1;
         }
@@ -71,7 +72,6 @@ public class HomeworkWithArrays {
         for (int i = 0; i < matrix.length; i++) {
             matrix[i][i] = 1;
             matrix[i][matrix.length - i - 1] = 1;
-
         }
         return matrix;
     }
@@ -124,10 +124,22 @@ public class HomeworkWithArrays {
         return false;
     }
 
-//8. *** Написать метод, которому на вход подается одномерный массив и число n (может быть
+    //8. *** Написать метод, которому на вход подается одномерный массив и число n (может быть
 //положительным, или отрицательным), при этом метод должен сместить все элементы массива
 //на n позиций. Элементы смещаются циклично. Для усложнения задачи нельзя пользоваться
 //вспомогательными массивами. Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5,
 //6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете
 //выбирать сами.
+    public static void shiftArray(int[] array, int shiftValue) {
+        for (int i = 0; i <array.length; i++) {
+            array[i] =new Random().nextInt(10);
+        }
+        System.out.println("Первоночальный массив: \n" + Arrays.toString(array));
+        int[] result = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            result[i] = array[(array.length + i - shiftValue) % array.length];
+        }
+        System.out.println("Массив со сдвигом на " + shiftValue + " элемент(а): \n" + Arrays.toString(result));
+    }
+
 }
