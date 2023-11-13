@@ -2,11 +2,7 @@ package ru.gb.bagautdinov.homework2;
 
 public class FirstHomework {
     public static void main(String[] args) {
-        System.out.println(checkingTwoNumbers(10, 6));
-        isTheNumberPositive(5);
-        System.out.println(isNegative(5));
-        outputALineToTheConsole("auto", 5);
-        System.out.println(leapYear(5));
+
     }
 
     //  1. Написать метод, принимающий на вход два целых числа и проверяющий, что их сумма лежит
