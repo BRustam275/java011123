@@ -22,13 +22,8 @@ public abstract class Animal {
         count++;
     }
 
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
@@ -40,8 +35,6 @@ public abstract class Animal {
             this.age = age;
         }
     }
-
-
     //    2. Все животные могут бежать и плыть. В качестве параметра каждому методу передается длина
     //    препятствия. Результатом выполнения действия будет печать в консоль. (Например,
 //     dogBobik.run(150); -> 'Бобик пробежал 150 м.');
@@ -51,40 +44,33 @@ public abstract class Animal {
         return runLimit;
     }
 
-    public void setRunLimit(int runLimit) {
-        this.runLimit = runLimit;
-    }
-
     public int getSwimLimit() {
         return swimLimit;
-    }
-
-    public void setSwimLimit(int swimLimit) {
-        this.swimLimit = swimLimit;
     }
 
     public static int getCount() {
         return count;
     }
 
-    public static void setCount(int count) {
-        Animal.count = count;
+
+    public void swim(int length) {
+        if (length > 0 && length < getRunLimit()) {
+            System.out.println(this + " Пробежал растояние " + length + " Метров");
+        }else {
+            System.out.println(this + " Не может пробежать " + length + " Метров");
+        }
     }
 
-    public abstract void swim(int length);
-
-    public abstract void run(int length);
-
-
+    public void run(int length) {
+        if (length > 0 && length < getSwimLimit()){
+            System.out.println(this + " Проплыл растояние " + length + " Метров");
+        }else {
+            System.out.println(this + " Не может проплыть " + length + " Метров");
+        }
+    }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Animal{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append(", runLimit=").append(runLimit);
-        sb.append(", swimLimit=").append(swimLimit);
-        sb.append('}');
-        return sb.toString();
+        return ("name " + name + ", age " + age +  ", runLimit " + runLimit + ", swimLimit " + swimLimit);
     }
 }

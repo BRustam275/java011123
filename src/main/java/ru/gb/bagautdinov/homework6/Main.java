@@ -1,5 +1,6 @@
 package ru.gb.bagautdinov.homework6;
 
+import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -8,10 +9,11 @@ public class Main {
                 new Cat("Мурзик", 2),
                 new Dog("Боб", 4),
                 new Dog("Пират", 2)};
+        Random random = new Random();
         for (Animal animal : animals) {
-            animal.run(350);
-            animal.swim(25);
-            System.out.println(animal);
+            animal.run(random.nextInt(500));
+            animal.swim(random.nextInt(25));
+          //  System.out.println(animal);
         }
         System.out.println("Количество живоныж " + Animal.getCount());
         System.out.println("Количество кошек " + Cat.getCount());

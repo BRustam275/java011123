@@ -9,28 +9,8 @@ public class Dog extends Animal {
         super(name, RUN_LIMIT, SWIM_LIMIT, age);
         count++;
     }
-
-    @Override
-    public void swim(int length) {
-        if (length > 0 && length < getRunLimit()) {
-            System.out.println(getName() + " Пробежал растояние " + length + " Метров");
-        }else {
-            System.out.println(getName() + " Не может пробежать " + length + " Метров");
-        }
-    }
-
-    @Override
-    public void run(int length) {
-        if (length > 0 && length < getSwimLimit()){
-            System.out.println(getName() + " Проплыл растояние " + length + " Метров");
-        }else {
-            System.out.println(getName() + " Не может проплыть " + length + " Метров");
-        }
-    }
-
-    @Override
     public String toString() {
-        return ("Собака " + getName() + " Возрост " + getAge());
+        return ("Собака по имени " + getName() + ", возрост " + getAge());
     }
 
     public static int getCount() {
